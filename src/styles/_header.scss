@@ -1,0 +1,40 @@
+@use "variaveis"; // Importa o arquivo variáveis.scss
+
+
+
+.header { // Classe para o Header
+    padding: 24px 0; // Protege o conteúdo em telas de celular
+
+    .header__content { // Classe para a div de conteúdo do Header
+        display: flex; // Ativa o modo organizador
+        justify-content: space-between; // Um elemento para cada lado
+        align-items: center; // Alinha o logo e o botão pelo meio (Botão do Header apenas)
+        width: 100%; // Acompanha a largura da tela
+        max-width: 1024px; // Define o Limite de largura do Header
+        margin: 0 auto; // Centraliza o Header na tela
+        padding: 0 20px;
+    }
+
+    img { // Imagem do Logo dentro do Header
+        width: auto; // Acompanha a largura da imagem de forma automática
+        height: 120px; // Define a altura fixa da imagem
+    }
+
+    .btn__primario { // Classe para o botão do Header
+        background-color: variaveis.$corBotao; // Define a cor de fundo do botão pegando a cor de variaveis
+        color: variaveis.$corTextoBotao; // Define a cor do texto do botão pegando a cor de variaveis
+        border-radius: 5px; // Define o arredondamento do botão
+        border: none; // Exclui a borda do botão
+        padding: 12px 24px; // Protege o centeúdo em telas de celular (Usar para que o botão acompanhe o texto dentro)
+        min-width: 180px; // Minimo da largura do botão
+        display: inline-block; // Mantém o texto do botão na mesma linha
+        text-align: center; // Alinha os textos no centro
+        cursor: pointer; // Muda o cursor para o estado de clicável
+        transition: 0.3s; // Deixa a mudança de cor do botão suave
+            &:hover { // Sombreamento do botão
+                background-color: rgba(variaveis.$corDeFundo, 0.5); // Muda a cor de fundo do botão ao passar o mouse
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); // Adiciona uma sombra atrás do botão 
+            }    
+    }
+}
+
