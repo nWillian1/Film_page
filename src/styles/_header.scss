@@ -4,29 +4,45 @@
 
 .header { // Classe para o Header
     padding: 15px 0; // Protege o conteúdo em telas de celular
+    position: fixed;   // O Header precisa estar "preso" no topo
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+
+    @media (max-width: 768px) {
+        background-color: #000; // Torna o fundo preto sólido
+        backdrop-filter: none;  // Remove o blur para não clarear o fundo
+        -webkit-backdrop-filter: none;
+    }
 
     .header__content { // Classe para a div de conteúdo do Header
         display: flex; // Ativa o modo organizador
         justify-content: space-between; // Um elemento para cada lado
         align-items: center; // Alinha o logo e o botão pelo meio (Botão do Header apenas)
         width: 100%; // Acompanha a largura da tela
-        max-width: 1440px; // Define o Limite de largura do Header
+        max-width: 1280px; // Define o Limite de largura do Header
         margin: 0 auto; // Centraliza o Header na tela
-        padding: 0 20px;
+        padding: 0 2%;
 
         @media (max-width: 768px) {
-            flex-direction: column;
-            padding: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 5px 15px;
         }
 
         &__buttons {
             display: flex;
-            gap: 15px;
+            gap: 10px;
 
             @media (max-width: 768px) {
-                flex-direction: column;
+                flex-direction: row;
                 width: 100%;
-                gap: 0;
+                gap: 10px;
             }
         }
     }
@@ -36,11 +52,10 @@
         height: 80px; // Define a altura fixa da imagem
 
         @media (max-width: 768px) {
-            height: 60px;       // Diminuímos um pouco para telas pequenas
-            display: block;     // Necessário para o margin auto funcionar
-            margin: 0 auto 20px auto;     // Centraliza a imagem horizontalmente
-            max-width: 100%;    // Garante que a imagem nunca seja maior que a tela
-
+            height: 40px;       // Diminuímos um pouco para telas pequenas
+            margin: 0;     // Necessário para o margin auto funcionar
+            display: block; // Necessário para o margin auto funcionar
+            mix-blend-mode: screen;
         }
     }
 
@@ -57,11 +72,10 @@
         transition: 0.3s; // Deixa a mudança de cor do botão suave
 
             @media (max-width: 768px) {
-            width: 100%;      // Faz o botão ocupar 100% da div __buttons
+            width: auto;      // Faz o botão ocupar 100% da div __buttons
             min-width: 0;      // Mata a trava de 180px que está empurrando o layout
-            display: block;    // Garante que ele se comporte como um bloco inteiro
-            padding: 18px 18px;   // Aumenta o conforto do clique no celular
-            font-size: 18px;
+            padding: 5px 10px;   // Aumenta o conforto do clique no celular
+            font-size: 11px;
         }
             &:hover { // Sombreamento do botão
                 background-color: rgba(variaveis.$corDeFundo, 0.5); // Muda a cor de fundo do botão ao passar o mouse
@@ -75,7 +89,7 @@
                 color: #fff;
 
                 @media (max-width: 768px) {
-                margin-left: 0;   // Remove o empurrão lateral do desktop
+                margin-left: 5px;   // Remove o empurrão lateral do desktop
                 margin-top: 10px; // Cria um respiro entre os dois botões
             }
 
