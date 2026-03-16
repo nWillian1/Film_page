@@ -5,6 +5,10 @@
     background: transparent;
     text-align: center;
 
+    @media (max-width: 768px) {
+        padding: 40px 0; // Reduz o espaçamento para o mobile
+    }
+
     .container {
         display: block;      // Garante que o container não seja flex
         max-width: 1200px;   // Ou a largura que você definiu para o site
@@ -18,6 +22,12 @@
         font-family: variaveis.$fonteTitulos;
         font-size: 42px;
         text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+
+        @media (max-width: 768px) {
+            font-size: 28px;      // Tamanho mais amigável para celular
+            margin-bottom: 30px;  // Diminui um pouco a distância para o vídeo
+            padding: 0 10px;      // Evita que o texto encoste nas bordas
+        }
     }
 
     .trailer__video {
@@ -29,6 +39,12 @@
         border: 4px solid #ff0000;
         box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
         overflow: hidden;
+
+        @media (max-width: 768px) {
+            max-width: 95%; // No mobile, o vídeo se expande para quase a tela toda
+            border-width: 2px; // Diminuímos a borda para não ficar grosseira em telas pequenas
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); // Sombra mais leve para não "pesar" no processamento
+        }
 
         iframe {
             position: absolute;

@@ -12,6 +12,9 @@
     box-sizing: border-box
 }
 
-body {
+body,html {
     background-color: variaveis.$corDeFundo;
+    overflow-x: hidden; // Impede qualquer coisa de vazar para os lados
+    width: 100%;
 }
+

@@ -10,11 +10,23 @@
     display: flex;
     align-items: center;
 
+    @media (max-width: 768px) {
+        min-height: auto;               // Permite que o hero encolha e não cubra o rosto
+        background-position: top center; // Centraliza a imagem no topo, mas prioriza o rosto do Akaza (que está acima)
+        background-size: cover;          // Garante que a imagem preencha, mas sem distorcer
+        padding: 40px 0;
+    }
+
     .container {
         display: flex;
         justify-content: flex-end;
         width: 100%;
         padding-right: 18px;
+
+        @media (max-width: 768px) {
+            padding-right: 0;   // Zera o padding lateral
+            justify-content: center; // Centraliza o conteúdo no mobile
+        }
     }
 
     a {
@@ -24,6 +36,12 @@
     &__content {
         max-width: 650px;
         text-align: right;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
     }
 
         &__title {
@@ -34,6 +52,14 @@
         margin-top: 16px;
         margin-bottom: 32px;
         white-space: nowrap;
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+            white-space: normal;
+            line-height: 1.2;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        }
     }
 
     &__text {
@@ -44,6 +70,14 @@
         line-height: 1.6;
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         max-width: 45ch;
+
+        @media (max-width: 768px) {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), -2px -2px 5px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.9);
+            line-height: 1.7; // Melhora o espaçamento entre as linhas no mobile
+            margin-bottom: 30px; // Dá um respiro antes do botão "Ver Detalhes"
+            font-weight: 500;
+            font-size: 16px;
+        }
     }
 }
 
@@ -57,10 +91,22 @@
         display: inline-block; // Mantém o texto do botão na mesma linha
         text-align: center; // Alinha os textos no centro
         cursor: pointer; // Muda o cursor para o estado de clicável
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); // Adiciona uma sombra atrás do botão
         transition: 0.3s; // Deixa a mudança de cor do botão suave
+        
+
+        @media (max-width: 768px) {
+    padding: 12px 24px; // Aumenta a altura para ficar igual aos do Header
+    font-size: 16px;    // Deixa o texto mais imponente
+    font-weight: bold;  // Garante que a leitura seja instantânea
+    width: 80%;        // Garante que ele use o espaço total disponível
+    margin: 0 auto;     // Centraliza o botão horizontalmente
+    display: block;     // Necessário para o margin auto funcionar
+}
+    
             &:hover { // Sombreamento do botão
                 background-color: rgba(variaveis.$corDeFundo, 0.5); // Muda a cor de fundo do botão ao passar o mouse
-                box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); // Adiciona uma sombra atrás do botão 
+                box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3); // Adiciona uma sombra atrás do botão 
             }    
     }
 

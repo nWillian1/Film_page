@@ -14,15 +14,34 @@
         margin: 0 auto; // Centraliza o Header na tela
         padding: 0 20px;
 
+        @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 0;
+        }
+
         &__buttons {
             display: flex;
             gap: 15px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
         }
     }
 
     img { // Imagem do Logo dentro do Header
         width: auto; // Acompanha a largura da imagem de forma automática
         height: 80px; // Define a altura fixa da imagem
+
+        @media (max-width: 768px) {
+            height: 60px;       // Diminuímos um pouco para telas pequenas
+            display: block;     // Necessário para o margin auto funcionar
+            margin: 0 auto 20px auto;     // Centraliza a imagem horizontalmente
+            max-width: 100%;    // Garante que a imagem nunca seja maior que a tela
+
+        }
     }
 
     .button { // Classe para o botão do Header
@@ -36,6 +55,14 @@
         text-align: center; // Alinha os textos no centro
         cursor: pointer; // Muda o cursor para o estado de clicável
         transition: 0.3s; // Deixa a mudança de cor do botão suave
+
+            @media (max-width: 768px) {
+            width: 100%;      // Faz o botão ocupar 100% da div __buttons
+            min-width: 0;      // Mata a trava de 180px que está empurrando o layout
+            display: block;    // Garante que ele se comporte como um bloco inteiro
+            padding: 18px 18px;   // Aumenta o conforto do clique no celular
+            font-size: 18px;
+        }
             &:hover { // Sombreamento do botão
                 background-color: rgba(variaveis.$corDeFundo, 0.5); // Muda a cor de fundo do botão ao passar o mouse
                 box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); // Adiciona uma sombra atrás do botão 
@@ -47,9 +74,16 @@
                 border: 2px solid #ff0000; 
                 color: #fff;
 
+                @media (max-width: 768px) {
+                margin-left: 0;   // Remove o empurrão lateral do desktop
+                margin-top: 10px; // Cria um respiro entre os dois botões
+            }
+
                 &:hover {
                     background-color: #ff0000;
                 }
+
+            
             }
     }
 }

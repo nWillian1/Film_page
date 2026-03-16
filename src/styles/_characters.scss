@@ -7,6 +7,11 @@
     background-position: center;
     background-attachment: fixed;
 
+    @media (max-width: 768px) {
+        padding: 50px 0; // Menos espaço vazio no topo e na base
+        background-attachment: scroll; // Melhora a fluidez do fundo no celular
+    }
+
     &__content {
         max-width: 1200px;
         margin: 0 auto;
@@ -21,6 +26,11 @@
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+
+                @media (max-width: 768px) {
+                font-size: 2rem; // Título menor para caber em uma linha só
+                margin-bottom: 30px; // Menos espaço até o primeiro card
+            }
             }
     }
 
@@ -31,6 +41,13 @@
         list-style: none;
         padding: 0;
         margin-top: 50px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // Empilha os cards (1 coluna)
+            gap: 2.5rem;                // Aumenta o espaço entre cada card para não ficarem grudados
+            margin-top: 30px;           // Reduz um pouco o espaço entre o título e o grid
+            padding: 0 10px;            // Um leve respiro lateral para os cards não tocarem na borda da tela
+        }
     }
 
     .character-card {
@@ -42,13 +59,27 @@
         transition: transform 0.3s ease;
         cursor: pointer;
 
+        @media (max-width: 768px) {
+            width: 100%;       // Garante que o card use a largura da coluna do grid
+            max-width: 400px;  // Evita que o card fique largo demais em tablets
+            margin: 0 auto;    // Centraliza o card na tela se ele for menor que 100%
+        }
+
         &:hover {
             transform: translateY(-10px);
+
+            @media (min-width: 769px) {
+                transform: translateY(-10px); // Mantemos o efeito apenas no computador
+            }
         }
 
         &__image {
             width: 100%;
             height: 250px;
+
+            @media (max-width: 768px) {
+            height: 300px; // No mobile, damos um pouco mais de altura para valorizar a arte
+        }
 
             img {
                 width: 100%;
@@ -73,6 +104,12 @@
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+
+                @media (max-width: 768px) {
+                font-size: 1.8rem; // Reduzimos de 3rem para algo mais harmônico
+                margin-bottom: 12px;
+                text-align: center; // Centralizado costuma ficar melhor no card empilhado
+            }
             }
 
             p {
@@ -81,6 +118,12 @@
                 margin-bottom: 8px;
                 font-weight: 300;
                 opacity: 0.9;
+
+                @media (max-width: 768px) {
+                font-size: 1rem; // Aumentamos levemente para facilitar a leitura no celular
+                line-height: 1.5;
+                text-align: center;
+            }
             }
         }
     }

@@ -6,11 +6,19 @@
     border-top: 3px solid #ff0000; // Nossa famosa linha vermelha Oni
     text-align: center;
 
+    @media (max-width: 768px) {
+        padding: 40px 0; // Um pouco menor que os 60px do desktop
+    }
+
     &__content {
         display: flex;
         flex-direction: column; // Coloca um embaixo do outro
         align-items: center;    // Centraliza horizontalmente
         gap: 30px;              // Dá um espaço bacana entre a logo, links e texto
+
+        @media (max-width: 768px) {
+            gap: 20px; // Diminuímos um pouco o espaço entre logo/links/texto
+        }
     }
 
     &__logo {
@@ -32,6 +40,12 @@
         gap: 25px; // Espaço entre os links
         padding: 0;
 
+        @media (max-width: 768px) {
+            gap: 15px; // Espaço mais compacto para caber na largura do celular
+            flex-wrap: wrap; // Caso você adicione mais links no futuro, eles pulam linha
+            justify-content: center;
+        }
+
         a {
             color: #fff;
             text-decoration: none;
@@ -39,6 +53,10 @@
             font-size: 14px;
             letter-spacing: 1.5px;
             transition: 0.3s;
+
+            @media (max-width: 768px) {
+                font-size: 13px; // Redução sutil para não berrar na tela pequena
+            }
 
             &:hover {
                 color: #ff0000;
@@ -49,6 +67,10 @@
 
     &__quote {
         max-width: 450px; // Evita que a frase fique muito esticada
+
+        @media (max-width: 768px) {
+            max-width: 90%; // Ocupa a largura quase toda com respiro lateral
+        }
         
         p {
             color: #eee;
@@ -63,6 +85,11 @@
         color: #555;
         font-size: 12px;
         margin-top: 10px;
+
+        @media (max-width: 768px) {
+            padding: 0 10px;
+            line-height: 1.4;
+        }
 
         span {
             display: block;
