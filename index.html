@@ -17,17 +17,91 @@
     <header class="header">
         <div class="header__content">
             <img src="./dist/images/Logo_DS.jpg" alt="Demon Slayer">
-            <button class="btn__primario"> Saiba Mais</button>
+            <div class="header__buttons">
+                <button class="button">Explore os Personagens</button>
+                <button class="button button--secondary">Assista ao trailer</button>
+            </div>
         </div>
     </header>
     <section class="hero">
         <div class="container">
             <div class="hero__content">
                 <h2 class="hero__title">A Determinação de um Hashira</h2>
-                <p class="hero__text">Prepare-se para enfrentar a noite e proteger aqueles que você ama.O destino da humanidade está em suas mãos.</p>
+                <p class="hero__text">Prepare-se para enfrentar a noite e proteger aqueles que você ama. O destino da humanidade está em suas mãos.</p>
                 <a href="#" class="btn__primario">Explorar Personagens</a>
             </div>
         </div>
     </section>
+    <section class="characters">
+        <div class="characters__content">
+            <h1>Personagens principais</h1>
+            <ul class="characters__grid">
+                <li class="characters__item">
+                    <article class="character-card">
+                        <div class="character-card__image">
+                            <img src="./dist/images/Tanjiro.jpg" alt="Tanjiro Kamado">
+                        </div>
+                        <div class="character-card__info">
+                            <h2>Tanjiro Kamado</h2>
+                            <p>Um jovem que busca a cura para sua irmã e justiça para sua família.</p>
+                        </div>
+                    </article>
+                </li>
+                <li class="characters__item">
+                    <article class="character-card">
+                        <div class="character-card__image">
+                            <img src="./dist/images/Muzan.jpg" alt="Muzan Kibutsushi">
+                        </div>
+                        <div class="character-card__info">
+                            <h2>Muzan Kibutsushi</h2>
+                            <p>O líder dos Onis, em busca de conseguir andar sob a luz do dia.</p>
+                        </div>
+                    </article>
+                </li>
+                <li class="characters__item">
+                    <article class="character-card">
+                        <div class="character-card__image">
+                            <img src="./dist/images/NezukoK.jpg" alt="Nezuko Kamado">
+                        </div>
+                        <div class="character-card__info">
+                            <h2>Nezuko Kamado</h2>
+                            <p>Irmã de Tanjiro, se transformou em Oni após o ataque a sua família.</p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="trailer" id="trailer">
+        <div class="container">
+            <h2 class="h1">Trailer Oficial</h2> 
+            <div class="trailer__video">
+                <iframe src="https://www.youtube.com/embed/x7uLutVRBfI?si=wjhijt97g_1k0OzP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen" ></iframe>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <img src="./dist/images/Logo_DS.jpg" alt="Demon Slayer" class="footer__logo">
+                <nav class="footer__nav">
+                    <ul class="footer__links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="characters">Personagens</a></li>
+                        <li><a href="#trailer">Trailer</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__quote">
+                    <p>
+                        "Não importa quantos de nós caiam, outros se levantarão para tomar nosso lugar".
+                    </p>
+                </div>
+                <p class="footer__copyright">
+                    &copy; 2025 Demon Slayer - Arco do Castelo Infinito. <br>
+                    <span>Landing page criada para fins de estudo e prática</span>
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
